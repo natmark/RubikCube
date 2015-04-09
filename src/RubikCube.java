@@ -453,7 +453,16 @@ public class RubikCube extends JFrame implements KeyListener{
 
 public static void verticalL(int z){
 	   /*-------------------------…•½•ûŒü¶‰ñ“]-------------------------*/
-    
+	int z2 = z;
+	for(int i = 0; i < 3;i++){
+		for(int j = 0; j < 3; j++){
+			 blocklist[j][i][z2].setRotationZ(1);
+			 blocklist[j][i][z2].update();
+		}
+	}
+
+	
+	/*
 		Block escapelist2[][][] = new Block[3][3][3];
 		int z2 = z;
 		for(int i = 0; i < 3;i++){
@@ -478,11 +487,18 @@ public static void verticalL(int z){
 				blocklist[j][i][z2] = escapelist2[j][i][z2];		
 			}
 		}
+		*/
  }
 public static void verticalR(int z){
+	for(int i = 0; i < 3;i++){
+		for(int j = 0; j < 3; j++){
+			blocklist[j][i][z].setRotationZ(- 1);
+			blocklist[j][i][z].update();
+		}
+	}
 
     /*-------------------------…•½•ûŒü‰E‰ñ“]-------------------------*/
- 	
+ 	/*
 	Block escapelist[][][] = new Block[3][3][3];
 	
 	for(int i = 0; i < 3;i++){
@@ -507,11 +523,20 @@ public static void verticalR(int z){
 				blocklist[j][i][z] = escapelist[j][i][z];		
 			}
 		}	
+		*/
 }
 
 public static void tateL(int x){
 	   /*-------------------------c•½•ûŒü¶‰ñ“]-------------------------*/
-     
+	int x2 = x;
+	for(int i = 0; i < 3;i++){
+		for(int j = 0; j < 3; j++){
+			blocklist[x2][j][i].setRotationX(1);
+			blocklist[x2][j][i].update();
+		}
+	}
+
+	/*
 	    Block escapelist6[][][] = new Block[3][3][3];
 		
 		int x2 = x;
@@ -537,10 +562,18 @@ public static void tateL(int x){
 				blocklist[x2][j][i] = escapelist6[x2][j][i];		
 			}
 		}	
+		*/
 }
 public static void tateR(int x){
 	   /*-------------------------c•ûŒü‰E‰ñ“]-------------------------*/
- 	
+	for(int i = 0; i < 3;i++){
+		for(int j = 0; j < 3; j++){
+			blocklist[x][j][i].setRotationX(- 1);
+			blocklist[x][j][i].update();
+		}
+	}
+
+	/*
 		Block escapelist5[][][] = new Block[3][3][3];
 		
 		for(int i = 0; i < 3;i++){
@@ -565,12 +598,21 @@ public static void tateR(int x){
 				blocklist[x][j][i] = escapelist5[x][j][i];		
 			}
 		}
+		*/
 }
 
 public static void yokoL(int y){
     
 /*------------------------‰¡•ûŒü¶‰ñ“]-------------------------*/
- 	    
+	int y2 = y;
+	for(int i = 0; i < 3;i++){
+			for(int j = 0; j < 3; j++){
+				blocklist[j][y2][i].setRotationY(-1);		
+				blocklist[j][y2][i].update();
+			}
+		}
+
+	/*
  		Block escapelist4[][][] = new Block[3][3][3];
  	     
  		int y2 = y;
@@ -597,10 +639,18 @@ public static void yokoL(int y){
  				blocklist[j][y2][i] = escapelist4[j][y2][i];		
  			}
  		}
+ 		*/
 }
 public static void yokoR(int y){
 	   /*------------------------‰¡•ûŒü‰E‰ñ“]-------------------------*/
-	    
+		for(int i = 0; i < 3;i++){
+ 			for(int j = 0; j < 3; j++){
+ 				blocklist[j][y][i].setRotationY(1);		
+ 				blocklist[j][y][i].update();
+ 			}
+ 		}
+
+	/*
 	 		Block escapelist3[][][] = new Block[3][3][3];
 	 	     	for(int i = 0; i < 3;i++){
 	 			for(int j = 0; j < 3; j++){
@@ -625,6 +675,7 @@ public static void yokoR(int y){
 	 				blocklist[j][y][i] = escapelist3[j][y][i];		
 	 			}
 	 		}
+	 		*/
 }
 public void output(){
 	System.out.println("//=============================//");
